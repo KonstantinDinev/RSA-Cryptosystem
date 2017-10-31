@@ -1,6 +1,4 @@
 # RSA-Cryptosystem
-This program is made to show the students how the RSA cryptography works
+This app shows how the RSA algorithm works in details
 
-![](/Clean%20RSA.JPG)
-
-![](/RSA%20big%20numbers.png)
+It is a nice tool to verify your homework of the cryptography subject
