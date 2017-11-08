@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -23,12 +23,12 @@ namespace RSA
             bool result = Int32.TryParse(value, out parseNumber);
             if (result)
             {
-                Console.WriteLine("Въвеждането на число {0} е успешно!", parseNumber);
+                Console.WriteLine("Р’СЉРІРµР¶РґР°РЅРµС‚Рѕ РЅР° С‡РёСЃР»Рѕ {0} Рµ СѓСЃРїРµС€РЅРѕ!", parseNumber);
             }
             else
             {
                 if (value == null) value = "";
-                Console.Write("Въведената стойност {0} не отговаря на типа данни...\nВъведете отново! = ", value);
+                Console.Write("Р’СЉРІРµРґРµРЅР°С‚Р° СЃС‚РѕР№РЅРѕСЃС‚ {0} РЅРµ РѕС‚РіРѕРІР°СЂСЏ РЅР° С‚РёРїР° РґР°РЅРЅРё...\nР’СЉРІРµРґРµС‚Рµ РѕС‚РЅРѕРІРѕ! = ", value);
                 
                 RSA.Restart();
             }
@@ -40,23 +40,23 @@ namespace RSA
             int cnt = 0;
             for(int i = 2; i < number; i++)
                 if(number % i == 0) cnt++;
-            Console.Write("Числото {0} е ", number);
+            Console.Write("Р§РёСЃР»РѕС‚Рѕ {0} Рµ ", number);
             if (cnt == 0)
             {
-                Console.Write("просто число!\n");
+                Console.Write("РїСЂРѕСЃС‚Рѕ С‡РёСЃР»Рѕ!\n");
                 flag = flag + 1;    
             }
             else
             {
-                Console.Write("съставно\n");
+                Console.Write("СЃСЉСЃС‚Р°РІРЅРѕ\n");
             }
             return number;
         }
 
         protected static int VzaimnoProsti(int number1, int number2)
         {
-            //Търсим най-голям общ делител
-            //Докато разликата между двете числа е по-малка или по-голяма от 0
+            //РўСЉСЂСЃРёРј РЅР°Р№-РіРѕР»СЏРј РѕР±С‰ РґРµР»РёС‚РµР»
+            //Р”РѕРєР°С‚Рѕ СЂР°Р·Р»РёРєР°С‚Р° РјРµР¶РґСѓ РґРІРµС‚Рµ С‡РёСЃР»Р° Рµ РїРѕ-РјР°Р»РєР° РёР»Рё РїРѕ-РіРѕР»СЏРјР° РѕС‚ 0
             while (number1 != number2)
             {
                 if (number1 > number2)
@@ -65,11 +65,11 @@ namespace RSA
                 }
                 else
                 {
-                    // Ако (M>N) M=M-N; else N=N-M; за да са равностойни
+                    // РђРєРѕ (M>N) M=M-N; else N=N-M; Р·Р° РґР° СЃР° СЂР°РІРЅРѕСЃС‚РѕР№РЅРё
                     number2 -= number1;
                 }
             }//while
-            return number1; //Връща най-големия общ делител
+            return number1; //Р’СЂСЉС‰Р° РЅР°Р№-РіРѕР»РµРјРёСЏ РѕР±С‰ РґРµР»РёС‚РµР»
         }
 
 
@@ -78,7 +78,7 @@ namespace RSA
             long d, x, y;
 
             int r;
-            if (a < 0) a = -a; Console.WriteLine("\nф(N)=> a = {0}", a);
+            if (a < 0) a = -a; Console.WriteLine("\nС„(N)=> a = {0}", a);
             if (b < 0) b = -b; Console.WriteLine("Ko ==> b = {0}", b);
             if (b > a)
             { /* swap */
@@ -102,7 +102,7 @@ namespace RSA
 
 
         unsafe public static void extended_euclid(long a, long b, long* x, long* y, long* d)
-        /* Калкулира * *x + b * *y = gcd(a, b) = *d */
+        /* РљР°Р»РєСѓР»РёСЂР° * *x + b * *y = gcd(a, b) = *d */
         {
             long q, r, x1, x2, y1, y2;
             if (b == 0)
@@ -133,7 +133,7 @@ namespace RSA
             *x = x2; Console.WriteLine("\n   A = {0}", *x);
             *y = y2; Console.WriteLine("   B = {0}", *y);
 
-            //Извеждам секретния ключ Кс ;)
+            //РР·РІРµР¶РґР°Рј СЃРµРєСЂРµС‚РЅРёСЏ РєР»СЋС‡ РљСЃ ;)
             if (*y < 0)
             {
                 Console.ForegroundColor = ConsoleColor.White;
@@ -149,7 +149,7 @@ namespace RSA
 
             //End ;)
             Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.Write("Поздравления! Вие върнахте успешно разширения алгоритъм на Евклид!");
+            Console.Write("РџРѕР·РґСЂР°РІР»РµРЅРёСЏ! Р’РёРµ РІСЉСЂРЅР°С…С‚Рµ СѓСЃРїРµС€РЅРѕ СЂР°Р·С€РёСЂРµРЅРёСЏ Р°Р»РіРѕСЂРёС‚СЉРј РЅР° Р•РІРєР»РёРґ!");
             Console.ForegroundColor = ConsoleColor.Gray; Console.BackgroundColor = ConsoleColor.Black;
 
             //Exit from the program! Press any button..
@@ -173,17 +173,17 @@ Console.WriteLine(" yyyyyyyy          /yyyyyyyo+hyyyyy:`        osyyyyho      sy
 Console.WriteLine("`yyyyyyyy          -yyyyyyh::hyyyss/y:                    :yyyyyyo.yyyyyyy.   ");
 Console.WriteLine(" yyyyyyys          ysyyyyys  +yyyyyyyy.sso+--.           -yyyyyyy.  yyyyyys`  ");
 Console.WriteLine(" yyyyyyyyssossossosssyyys+`     +yyyyyo+yyyyyyso/       -yyyyyyy/    yyyyyyo  ");
-Console.WriteLine(" yysyКонстантинsyyyyyyy+-         -/oosoyyДиневyyys:    syyyyyyo     yyyyyyy: ");
+Console.WriteLine(" yysyРљРѕРЅСЃС‚Р°РЅС‚РёРЅsyyyyyyy+-         -/oosoyyР”РёРЅРµРІyyys:    syyyyyyo     yyyyyyy: ");
 Console.WriteLine(" yyyyyyysyssssssyyyyyyyyy+            ``-+osyyyyyyyy   :yyyyyyy-     +yyyyyyy-");
 Console.WriteLine("`ys+:yCorleozo-yyoyyyyyyy+/sss+oys        `-syyyyyyy .yyyyyyyyyyyyyyyyyyyyyys");
 Console.WriteLine(" +oyyyyy           +yyyyyyy/yossyyy+-        oyyyyyys`syyyyyyyyyyyyyyyyyyyyyyy");
-Console.WriteLine(" yyyyyyy           `yyyyyyh-yyyssyyyysooo/-/oyyyyyyy-:yyyyyyyoКонстантин+-yyyy");
+Console.WriteLine(" yyyyyyy           `yyyyyyh-yyyssyyyysooo/-/oyyyyyyy-:yyyyyyyoРљРѕРЅСЃС‚Р°РЅС‚РёРЅ+-yyyy");
 Console.WriteLine(" ysyyoyy            yyyyyyh+  /yyyyyyyyyyyyyyyyyyys-.oyyyyys.           oyyyyo");
 Console.WriteLine("`syyos:             oyyyyyyy   `-+osyyyyyyyyyyyy+-  -+yyyyy+             yyyyy");
 Console.WriteLine("                                                                              ");  Console.ForegroundColor = ConsoleColor.Gray;
 Console.WriteLine("                            This Program Is Made By:                           "); 
-Console.WriteLine("                   | Константин Динев - Constantine Corleozo |                 ");
-Console.WriteLine(" RSA Криптосистема с алгоритъм на Евклид - RSA Cryptosystem with Euclidean Algo"); Console.ForegroundColor = ConsoleColor.DarkGreen;
+Console.WriteLine("                   | РљРѕРЅСЃС‚Р°РЅС‚РёРЅ Р”РёРЅРµРІ - Constantine Corleozo |                 ");
+Console.WriteLine(" RSA РљСЂРёРїС‚РѕСЃРёСЃС‚РµРјР° СЃ Р°Р»РіРѕСЂРёС‚СЉРј РЅР° Р•РІРєР»РёРґ - RSA Cryptosystem with Euclidean Algo"); Console.ForegroundColor = ConsoleColor.DarkGreen;
 Console.WriteLine(" ------------------------------------------------------------------------------"); Console.ForegroundColor = ConsoleColor.Gray;
 
 Console.BackgroundColor = ConsoleColor.Black;
