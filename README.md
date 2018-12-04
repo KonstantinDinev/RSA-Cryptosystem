@@ -1,5 +1,5 @@
 # RSA-Cryptosystem
-This program is made by me to show the students how the RSA cryptography works
+This program was made to show my classmates how the RSA cryptography works
 
 ![](/Snapshots/Clean%20RSA.JPG)
 
